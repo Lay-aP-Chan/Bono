@@ -1,0 +1,71 @@
+<!--Bono de Navida -->
+<!--
+    la condición es que si la persona tiene más de 15 años va a recibir el 30 
+-->
+ 
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bono</title>
+    </head>
+    <body>
+    <p>si la persona tiene más de 15 años va a recibir el 30%<br>
+        si no solo recivirá el 15%</p>
+        <script>
+        var Nombre="";
+        var Depto=0.0;
+        var SueldoDiario=0.0;
+        var Antiguedad=0.0;
+        var DiasTrabajador=0.0;
+
+        var Subtotal=0.0;
+        var Bono=0.0;
+        var Total=0.0;
+        var resp=Boolean;
+
+        Nombre=prompt("Nombre del trabajador: ");
+        Depto=prompt("A qué Departamento pertenece?: ");
+        SueldoDiario=prompt("Ingrese Sueldo Diario: ");
+        Antiguedad=prompt("Antiguedad: ");
+        DiasTrabajador=prompt("Dias Trbajador: ");
+            
+            if(Antiguedad=>15){
+                resp=confirm("validar Descuento?");
+                 if(resp==true){
+                    Subtotal=SueldoDiario*DiasTrabajador;
+                    Bono=Subtotal*0.30;
+                    Total=Subtotal+Bono;
+                 }
+            }else if(Antiguedad>0 && Antiguedad<15){
+                resp=confirm("validar Descuento?");
+                 if(resp==true){
+                    Subtotal=SueldoDiario*DiasTrabajador;
+                    Bono=Subtotal*0.15;
+                    Total=Subtotal+Bono;
+                 }
+            }
+        document.write("<center><table border=1>");
+        document.write("<tr>    <td>Nombre</td>");
+        document.write("        <td>Depto</td>");
+        document.write("        <td>Sueldo Diario</td>");
+        document.write("        <td>Antiguedad</td>");
+        document.write("        <td>Dias trabajador</td>");
+        document.write("        <td>subtotal</td>");
+        document.write("        <td>Bono</td>");
+        document.write("        <td>Total</td>          </tr>");
+            
+        document.write("<tr>    <td>"+Nombre+"</td>");
+        document.write("        <td>"+Depto+"</td>");
+        document.write("        <td>"+SueldoDiario+"</td>");
+        document.write("        <td>"+Antiguedad+"</td>");
+        document.write("        <td>"+DiasTrabajador+"</td>");
+        document.write("        <td>"+Subtotal+"</td>");
+        document.write("        <td>"+Bono+"</td>");
+        document.write("        <td>"+Total+"</td>      </tr>");
+        document.write("        </table></center>");
+        
+    </script>
+    </body>
+
+    
+</html>
